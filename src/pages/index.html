@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Simple</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header with cart -->
+    <div class="header-container">
+        <div>Cabecera de Decoración</div>
+        <div class="cart" id="cart">Tu Carrito (0)</div>
+    </div>
+
+    <!-- Search Box -->
+    <div class="search-box">
+        <input type="text" placeholder="Buscar...">
+        <button>Buscar</button>
+    </div>
+
+    <!-- Categories -->
+    <div class="categories">
+        <span class="category selected" onclick="cambiarCategoria(1)">Categoría 1</span>
+        <span class="category" onclick="cambiarCategoria(2)">Categoría 2</span>
+        <span class="category" onclick="cambiarCategoria(3)">Categoría 3</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <div class="filters">
+            <h3>Filtros</h3>
+            <label><input type="checkbox"> Opción 1</label><br>
+            <label><input type="checkbox"> Opción 2</label><br>
+            <label><input type="checkbox"> Opción 3</label><br>
+        </div>
+
+        <div class="products" id="productos">
+            <div class="product" onclick="agregarAlCarrito()">Producto A1</div>
+            <div class="product" onclick="agregarAlCarrito()">Producto B1</div>
+            <div class="product" onclick="agregarAlCarrito()">Producto C1</div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
