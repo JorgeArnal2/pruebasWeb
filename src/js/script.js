@@ -1,3 +1,10 @@
+async function fetchProducts() {
+    const response = await fetch("http://localhost:3000/products");
+    const products = await response.json();
+    return products;
+}
+
+
 let carrito = 0;
 
 function agregarAlCarrito() {
@@ -6,19 +13,39 @@ function agregarAlCarrito() {
 }
 
 function cambiarCategoria(categoria) {
+    // Highlight the selected category
     const categorias = document.querySelectorAll(".category");
     categorias.forEach(cat => cat.classList.remove("selected"));
     categorias[categoria - 1].classList.add("selected");
 
-    const productos = document.getElementById("productos");
-
-    const data = {
-        1: ["Producto A1", "Producto B1", "Producto C1", "Producto D1", "Producto E1", "Producto F1"],
-        2: ["Producto A2", "Producto B2", "Producto C2", "Producto D2", "Producto E2", "Producto F2"],
-        3: ["Producto A3", "Producto B3", "Producto C3", "Producto D3", "Producto E3", "Producto F3"]
-    };
-
-    productos.innerHTML = data[categoria]
-        .map(product => `<div class="product" onclick="agregarAlCarrito()">${product}</div>`)
-        .join("");
+    // Show only the products for the selected category
+    mostrarProductosPorCategoria(categoria);
 }
+
+
+async function mostrarProductosPorCategoria(categoria) {
+    const productosContainer = document.getElementById("productos");
+    productosContainer.innerHTML = ""; // Clear previous products
+
+    // Filter products by category
+    const products = await fetchProducts();
+    const filteredProducts = products.filter(p => p.category == categoria);
+
+    // Generate product HTML dynamically
+    productosFiltrados.forEach(producto => {
+        const productElement = document.createElement("div");
+        productElement.classList.add("product");
+        productElement.innerHTML = `
+            <div>${producto.image}</div>
+            <div>${producto.name}</div>
+            <div>Precio: ${producto.price}€</div>
+            <button onclick="agregarAlCarrito('${producto.name}')">Agregar</button>
+        `;
+        productosContainer.appendChild(productElement);
+    });
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    mostrarProductosPorCategoria(1); // Show first category by default
+});
