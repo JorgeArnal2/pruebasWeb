@@ -20,7 +20,7 @@ public class Controller {
     }
 
     @GetMapping("/{category}")
-    public List<Product> getProductsByCategory(@PathVariable int category) {
+    public List<Product> getProductsByCategory(@PathVariable Category category) {
         return productRepository.getProductsByCategory(category);
     }
 

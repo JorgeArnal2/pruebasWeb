@@ -6,10 +6,10 @@ public class Product implements Serializable {
     private int id;
     private String name;
     private double price;
-    private int category;
+    private Category category;
     private String image;
 
-    public Product(String name, double price, int category, String image) {
+    public Product(String name, double price, Category category, String image) {
         this.name = name;
         this.price = price;
         this.category = category;
@@ -26,8 +26,8 @@ public class Product implements Serializable {
     public double getPrice() { return price; }
     public void setPrice(double price) { this.price = price; }
 
-    public int getCategory() { return category; }
-    public void setCategory(int category) { this.category = category; }
+    public Category getCategory() { return category; }
+    public void setCategory(Category category) { this.category = category; }
 
     public String getImage() { return image; }
     public void setImage(String image) { this.image = image; }
@@ -39,6 +39,6 @@ public class Product implements Serializable {
 
     public static Product fromString(String line) {
         String[] parts = line.split(",");
-        return new Product(parts[0], Double.parseDouble(parts[1]), Integer.parseInt(parts[2]), parts[3]);
+        return new Product(parts[0], Double.parseDouble(parts[1]), Category.fromString(parts[2]), parts[3]);
     }
 }

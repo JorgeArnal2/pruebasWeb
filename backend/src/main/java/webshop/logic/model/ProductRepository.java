@@ -13,11 +13,14 @@ public class ProductRepository {
 
     // Constructor privado para evitar la creación de instancias desde fuera de la clase
     private ProductRepository() {
-        products.add(new Product("Producto A1", 10, 1, "https://imgs.search.brave.com/10x7W0pTCqSjztXwkQmfX_01tBkeFrRK9FUFbK6UkNw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aW1hZ2VuLmNvbS5t/eC9pbWFnZW4vbmVn/cm8uc3Zn"));
-        products.add(new Product("Producto B1", 15, 1, "https://imgs.search.brave.com/10x7W0pTCqSjztXwkQmfX_01tBkeFrRK9FUFbK6UkNw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aW1hZ2VuLmNvbS5t/eC9pbWFnZW4vbmVn/cm8uc3Zn"));
-        products.add(new Product("Producto C1", 20, 1, "https://imgs.search.brave.com/10x7W0pTCqSjztXwkQmfX_01tBkeFrRK9FUFbK6UkNw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aW1hZ2VuLmNvbS5t/eC9pbWFnZW4vbmVn/cm8uc3Zn"));
-        products.add(new Product("Producto A2", 12, 2, "https://imgs.search.brave.com/10x7W0pTCqSjztXwkQmfX_01tBkeFrRK9FUFbK6UkNw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aW1hZ2VuLmNvbS5t/eC9pbWFnZW4vbmVn/cm8uc3Zn"));
-        products.add(new Product("Producto B2", 18, 2, "https://imgs.search.brave.com/10x7W0pTCqSjztXwkQmfX_01tBkeFrRK9FUFbK6UkNw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aW1hZ2VuLmNvbS5t/eC9pbWFnZW4vbmVn/cm8uc3Zn"));
+        Category categoria1 = Category.CAT1;
+        Category categoria2 = Category.CAT2;
+
+        products.add(new Product("Producto A1", 10, categoria1, "https://imgs.search.brave.com/10x7W0pTCqSjztXwkQmfX_01tBkeFrRK9FUFbK6UkNw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aW1hZ2VuLmNvbS5t/eC9pbWFnZW4vbmVn/cm8uc3Zn"));
+        products.add(new Product("Producto B1", 15, categoria1, "https://imgs.search.brave.com/10x7W0pTCqSjztXwkQmfX_01tBkeFrRK9FUFbK6UkNw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aW1hZ2VuLmNvbS5t/eC9pbWFnZW4vbmVn/cm8uc3Zn"));
+        products.add(new Product("Producto C1", 20, categoria1, "https://imgs.search.brave.com/10x7W0pTCqSjztXwkQmfX_01tBkeFrRK9FUFbK6UkNw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aW1hZ2VuLmNvbS5t/eC9pbWFnZW4vbmVn/cm8uc3Zn"));
+        products.add(new Product("Producto A2", 12, categoria2, "https://imgs.search.brave.com/10x7W0pTCqSjztXwkQmfX_01tBkeFrRK9FUFbK6UkNw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aW1hZ2VuLmNvbS5t/eC9pbWFnZW4vbmVn/cm8uc3Zn"));
+        products.add(new Product("Producto B2", 18, categoria2, "https://imgs.search.brave.com/10x7W0pTCqSjztXwkQmfX_01tBkeFrRK9FUFbK6UkNw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aW1hZ2VuLmNvbS5t/eC9pbWFnZW4vbmVn/cm8uc3Zn"));
     }
 
     public static ProductRepository getInstance() {
@@ -31,7 +34,7 @@ public class ProductRepository {
         return products;
     }
 
-    public List<Product> getProductsByCategory(int category) {
+    public List<Product> getProductsByCategory(Category category) {
         return products.stream()
                 .filter(p -> p.getCategory() == category)
                 .collect(Collectors.toList());

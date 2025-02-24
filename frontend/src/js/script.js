@@ -1,21 +1,26 @@
-async function fetchProducts(category = 1) {
-    const response = await fetch(`http://localhost:8080/products/${category}`);
+// Caché de productos
+let productCache = [];
+let cart = 0;
+
+// Función para obtener todos los productos una sola vez
+async function fetchAllProducts() {
+    const response = await fetch(`http://localhost:8080/products`);
     const products = await response.json();
+    productCache = products;
     return products;
 }
-
-let cart = 0;
 
 function addToCart() {
     cart++; // Increase cart count
     document.getElementById("cart").innerText = `Tu Carrito (${cart})`;
 }
 
-async function showProductByCategory(category) {
+function showProductByCategory(category) {
     const productosContainer = document.getElementById("productos");
     productosContainer.innerHTML = "";
 
-    const products = await fetchProducts(category);
+    // Filtra los productos por categoría desde la caché
+    const products = productCache.filter(product => product.category == category);
 
     if (products.length === 0) {
         productosContainer.classList.add("empty");
@@ -48,6 +53,7 @@ function swapCategory(category) {
     showProductByCategory(category);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    showProductByCategory(1); // Show first category by default
+document.addEventListener("DOMContentLoaded", async () => {
+    await fetchAllProducts(); // Obtiene todos los productos al cargar la página
+    showProductByCategory(1); // Muestra la primera categoría por defecto
 });
