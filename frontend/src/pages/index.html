@@ -19,24 +19,27 @@
         <button>Buscar</button>
     </div>
 
-    <!-- Categories -->
-    <div class="categories">
-        <span class="category selected" onclick="swapCategory(1)">Patinetes</span>
-        <span class="category" onclick="swapCategory(2)">Electrodomésticos</span>
-        <span class="category" onclick="swapCategory(3)">JoseMas</span>
-    </div>
-
     <!-- Main Container -->
     <div class="main-container">
-        <div class="filters">
-            <h3>Filtros</h3>
-            <label><input type="checkbox"> Opción 1</label><br>
-            <label><input type="checkbox"> Opción 2</label><br>
-            <label><input type="checkbox"> Opción 3</label><br>
+        <!-- Cabecera del panel principal -->
+        <div class="panel-header">
+            <div class="categories">
+                <!-- Categorías dinámicas -->
+            </div>
         </div>
 
-        <div class="products" id="productos">
-            <!-- Productos dinámicos -->
+        <!-- Panel principal con filtros y productos -->
+        <div class="panel-body">
+            <div class="filters">
+                <h3>Filtros</h3>
+                <label><input type="checkbox"> Opción 1</label><br>
+                <label><input type="checkbox"> Opción 2</label><br>
+                <label><input type="checkbox"> Opción 3</label><br>
+            </div>
+
+            <div class="products" id="productos">
+                <!-- Productos dinámicos -->
+            </div>
         </div>
     </div>
 

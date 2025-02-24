@@ -7,10 +7,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/products")
 @CrossOrigin(origins = "*") // Allow frontend to connect
-public class Controller {
+public class ProductController {
     private final ProductRepository productRepository;
 
-    public Controller() {
+    public ProductController() {
         this.productRepository = ProductRepository.getInstance();
     }
 
@@ -29,4 +29,6 @@ public class Controller {
         productRepository.addProduct(product);
         return "Product added!";
     }
+
+    
 }

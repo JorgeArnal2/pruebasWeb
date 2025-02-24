@@ -15,12 +15,18 @@ public class ProductRepository {
     private ProductRepository() {
         Category categoria1 = Category.CAT1;
         Category categoria2 = Category.CAT2;
+        Category categoria4 = Category.CAT4;
+        Category categoria5 = Category.CAT5;
 
         products.add(new Product("Producto A1", 10, categoria1, "https://imgs.search.brave.com/10x7W0pTCqSjztXwkQmfX_01tBkeFrRK9FUFbK6UkNw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aW1hZ2VuLmNvbS5t/eC9pbWFnZW4vbmVn/cm8uc3Zn"));
         products.add(new Product("Producto B1", 15, categoria1, "https://imgs.search.brave.com/10x7W0pTCqSjztXwkQmfX_01tBkeFrRK9FUFbK6UkNw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aW1hZ2VuLmNvbS5t/eC9pbWFnZW4vbmVn/cm8uc3Zn"));
         products.add(new Product("Producto C1", 20, categoria1, "https://imgs.search.brave.com/10x7W0pTCqSjztXwkQmfX_01tBkeFrRK9FUFbK6UkNw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aW1hZ2VuLmNvbS5t/eC9pbWFnZW4vbmVn/cm8uc3Zn"));
         products.add(new Product("Producto A2", 12, categoria2, "https://imgs.search.brave.com/10x7W0pTCqSjztXwkQmfX_01tBkeFrRK9FUFbK6UkNw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aW1hZ2VuLmNvbS5t/eC9pbWFnZW4vbmVn/cm8uc3Zn"));
         products.add(new Product("Producto B2", 18, categoria2, "https://imgs.search.brave.com/10x7W0pTCqSjztXwkQmfX_01tBkeFrRK9FUFbK6UkNw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aW1hZ2VuLmNvbS5t/eC9pbWFnZW4vbmVn/cm8uc3Zn"));
+        products.add(new Product("Producto B4", 45, categoria4, "https://imgs.search.brave.com/10x7W0pTCqSjztXwkQmfX_01tBkeFrRK9FUFbK6UkNw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aW1hZ2VuLmNvbS5t/eC9pbWFnZW4vbmVn/cm8uc3Zn"));
+        products.add(new Product("Producto C4", 50, categoria4, "https://imgs.search.brave.com/10x7W0pTCqSjztXwkQmfX_01tBkeFrRK9FUFbK6UkNw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aW1hZ2VuLmNvbS5t/eC9pbWFnZW4vbmVn/cm8uc3Zn"));
+        products.add(new Product("Producto A5", 55, categoria5, "https://imgs.search.brave.com/10x7W0pTCqSjztXwkQmfX_01tBkeFrRK9FUFbK6UkNw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aW1hZ2VuLmNvbS5t/eC9pbWFnZW4vbmVn/cm8uc3Zn"));
+        
     }
 
     public static ProductRepository getInstance() {
