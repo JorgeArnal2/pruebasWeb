@@ -6,6 +6,6 @@ import java.util.List;
 public interface IProductDAO {
     List<Product> getAllProducts();
     void saveProduct(Product product);
-    void updateProduct(int id);
+    void updateProduct(Product product);
     void deleteProduct(int id);
 }

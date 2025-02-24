@@ -47,8 +47,18 @@ public class ProductFileDAO implements IProductDAO {
     }
 
     @Override
-    public void updateProduct(int id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'updateProduct'");
+    public void updateProduct(Product updatedProduct) {
+        List<Product> products = getAllProducts();
+        for (int i = 0; i < products.size(); i++) {
+            if (products.get(i).getId() == updatedProduct.getId()) {
+                products.set(i, updatedProduct);
+                break;
+            }
+        }
+        try {
+            objectMapper.writeValue(new File(FILE_PATH), products);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
