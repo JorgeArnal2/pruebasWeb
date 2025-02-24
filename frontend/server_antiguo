@@ -1,3 +1,9 @@
+/*este archivo estaba junto a script.js
+pero ahora tengo dudas, creo que este archivo es como se manejaba antes
+la persistencia, antes de descubrir que se podia hacer con otro proyecto en java
+por lo tanto creo que ahora no es necesario este server.js y lo dejo aquí fuera pero sin eliminar todavia
+lo he quitado y la pagina parece que sigue funcionando bien
+
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
@@ -70,3 +76,6 @@ app.delete("/products/:name", async (req, res) => {
 
 // Start server
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+
+
+*/
