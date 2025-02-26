@@ -1,4 +1,4 @@
-package webshop.logic.model;
+package webshop.logic.models;
 
 import java.io.Serializable;
 
@@ -37,8 +37,8 @@ public class Product implements Serializable {
         return name + "," + price + "," + category + "," + image;
     }
 
-    public static Product fromString(String line) {
-        String[] parts = line.split(",");
-        return new Product(parts[0], Double.parseDouble(parts[1]), Category.fromString(parts[2]), parts[3]);
-    }
+//    public static Product fromString(String line) {
+//        String[] parts = line.split(",");
+//        return new Product(parts[0], Double.parseDouble(parts[1]), Category.fromString(parts[2]), parts[3]);
+//    }
 }

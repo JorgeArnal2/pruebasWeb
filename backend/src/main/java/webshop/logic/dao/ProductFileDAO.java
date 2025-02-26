@@ -1,6 +1,6 @@
-package webshop.logic.DAO;
+package webshop.logic.dao;
 
-import webshop.logic.model.Product;
+import webshop.logic.models.Product;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.core.type.TypeReference;
 

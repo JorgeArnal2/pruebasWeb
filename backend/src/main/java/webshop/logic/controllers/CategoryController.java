@@ -1,6 +1,7 @@
-package webshop.logic.model;
+/*package webshop.logic.controllers;
 
 import org.springframework.web.bind.annotation.*;
+import webshop.logic.models.Category;
 
 
 import java.util.List;
@@ -27,7 +28,7 @@ public class CategoryController {
 
         public CategoryDTO(Category category) {
             this.name = category.name();
-            this.displayName = category.getDisplayName();
+            this.displayName = category.getName();
             this.specificFilters = category.getSpecificFilters();
             this.basicFilters = category.getBasicFilters();
         }
@@ -51,3 +52,4 @@ public class CategoryController {
     }
 }
 
+*/

@@ -1,6 +1,6 @@
-package webshop.logic.DAO;
+package webshop.logic.dao;
 
-import webshop.logic.model.Product;
+import webshop.logic.models.Product;
 import java.util.List;
 
 public interface IProductDAO {

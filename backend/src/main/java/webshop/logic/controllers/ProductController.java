@@ -1,6 +1,9 @@
-package webshop.logic.model;
+package webshop.logic.controllers;
 
 import org.springframework.web.bind.annotation.*;
+import webshop.logic.models.Category;
+import webshop.logic.models.Product;
+import webshop.logic.repositories.ProductRepository;
 
 import java.util.List;
 
