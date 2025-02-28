@@ -1,4 +1,4 @@
-package webshop.logic.DAO;
+package webshop.logic.dao;
 
 import webshop.logic.model.Product;
 import com.fasterxml.jackson.databind.ObjectMapper;
